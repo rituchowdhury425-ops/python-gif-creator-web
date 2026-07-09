@@ -178,3 +178,14 @@ button:hover {
     border-radius: 18px;
     box-shadow: 0 10px 25px rgba(0,0,0,.18);
 }
+.upload-box.dragover{
+
+    background:#d8f3dc;
+
+    border:3px dashed #2d6a4f;
+
+    transform:scale(1.02);
+
+    transition:.2s;
+
+}

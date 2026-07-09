@@ -26,7 +26,7 @@
     <form method="POST" enctype="multipart/form-data">
 
 
-        <label class="upload-box">
+        <label class="upload-box" id="drop-area">
 
             <span>📸</span>
 
@@ -98,6 +98,36 @@
 const imageInput = document.getElementById("imageInput");
 const preview = document.getElementById("preview");
 const fileCount = document.getElementById("fileCount");
+const dropArea = document.getElementById("drop-area");
+
+
+dropArea.addEventListener("dragover", function(e){
+
+    e.preventDefault();
+
+    dropArea.classList.add("dragover");
+
+});
+
+
+dropArea.addEventListener("dragleave", function(){
+
+    dropArea.classList.remove("dragover");
+
+});
+
+
+dropArea.addEventListener("drop", function(e){
+
+    e.preventDefault();
+
+    dropArea.classList.remove("dragover");
+
+    imageInput.files = e.dataTransfer.files;
+
+    imageInput.dispatchEvent(new Event("change"));
+
+});
 
 
 imageInput.addEventListener("change", function(){
