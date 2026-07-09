@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python GIF Creator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        🌿
+    </div>
+
+    <h1>🌿 Python GIF Creator</h1>
+
+    <p>Upload your favorite images and create an animated GIF in seconds.</p>
+
+
+    <form method="POST" enctype="multipart/form-data">
+
+
+        <label class="upload-box">
+
+            <span>📸</span>
+
+            <p>Choose your images</p>
+
+            <small>JPG, PNG supported</small>
+
+            <input id="imageInput" 
+                   type="file" 
+                   name="images" 
+                   multiple 
+                   required>
+
+        </label>
+
+
+        <p id="fileCount"></p>
+
+
+        <div id="preview"></div>
+
+
+        <br>
+
+
+        <button type="submit" onclick="showLoading()">
+    ✨ Create GIF
+</button>
+
+<p id="loading"></p>
+
+
+    </form>
+
+
+
+    {% if gif_ready %}
+
+<div class="result">
+
+    <h2>🎉 Your GIF is Ready!</h2>
+
+    <img src="/output/animation.gif" class="gif-preview">
+
+    <br><br>
+
+    <a href="/download">
+
+        <button>
+
+            ⬇ Download GIF
+
+        </button>
+
+    </a>
+
+</div>
+
+{% endif %}
+
+
+
+</div>
+
+
+
+<script>
+
+const imageInput = document.getElementById("imageInput");
+const preview = document.getElementById("preview");
+const fileCount = document.getElementById("fileCount");
+
+
+imageInput.addEventListener("change", function(){
+
+    preview.innerHTML = "";
+
+    let files = imageInput.files;
+
+    fileCount.innerHTML = files.length + " image(s) selected";
+
+
+    for(let file of files){
+
+        let img = document.createElement("img");
+
+        img.src = URL.createObjectURL(file);
+
+        preview.appendChild(img);
+
+    }
+
+});
+function showLoading(){
+
+    document.getElementById("loading").innerHTML =
+    "⏳ Creating your GIF... Please wait 🌿";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
