@@ -189,3 +189,20 @@ button:hover {
     transition:.2s;
 
 }
+select{
+
+    width:220px;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    border:2px solid #52b788;
+
+    font-size:16px;
+
+    background:white;
+
+    cursor:pointer;
+
+}

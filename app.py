@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, send_file, session
 import os
 from PIL import Image
+from numpy import size
 
 app = Flask(__name__)
 
@@ -45,14 +46,14 @@ def home():
                 path = os.path.join(upload_folder, file)
 
                 img = Image.open(path)
+                
 
-                img.thumbnail((500, 500))
-
-                background = Image.new("RGB", (500, 500), "white")
-
-                x = (500 - img.width) // 2
-                y = (500 - img.height) // 2
-
+                size = int(request.form["size"])
+                img.thumbnail((size, size))
+                background = Image.new("RGB", (size, size), "white")
+                x = (size - img.width) // 2
+                y = (size - img.height) // 2
+                
                 background.paste(img, (x, y))
 
                 gif_images.append(background)
@@ -62,11 +63,12 @@ def home():
 
             output_path = os.path.join(output_folder, "animation.gif")
 
+            speed = int(request.form["speed"])
             gif_images[0].save(
                 output_path,
                 save_all=True,
                 append_images=gif_images[1:],
-                duration=500,
+                duration=speed,
                 loop=0
             )
 
