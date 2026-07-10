@@ -24,12 +24,17 @@ def home():
         os.makedirs(upload_folder, exist_ok=True)
         os.makedirs(output_folder, exist_ok=True)
 
+
         images = request.files.getlist("images")
         print(f"Received {len(images)} image(s)")
 
         # Clear old uploads
         for file in os.listdir(upload_folder):
-            os.remove(os.path.join(upload_folder, file))
+            
+            file_path = os.path.join(upload_folder, file)
+            
+            if os.path.isfile(file_path):
+                os.remove(file_path)
 
         # Save new images
         for image in images:

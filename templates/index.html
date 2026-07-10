@@ -48,43 +48,35 @@
 
         <div id="preview"></div>
 
-
-        <br>
-
-
-        <button type="submit" onclick="showLoading()">
-            <label for="speed"><b>🎬 Animation Speed</b></label>
+        <label for="speed"><b>🎬 Animation Speed</b></label>
 
 <br><br>
 
 <select name="speed" id="speed">
-
     <option value="1000">🐢 Slow</option>
-
     <option value="500" selected>🚶 Medium</option>
-
     <option value="200">🚀 Fast</option>
-
 </select>
 
 <br><br>
-
 <label for="size"><b>📏 GIF Size</b></label>
 
 <br><br>
 
 <select name="size" id="size">
-
     <option value="300">🟢 Small (300 × 300)</option>
-
     <option value="500" selected>🟢 Medium (500 × 500)</option>
-
     <option value="800">🟢 Large (800 × 800)</option>
-
 </select>
 
 <br><br>
 
+
+        <br>
+
+
+        <button type="submit" onclick="showLoading()">
+            
     ✨ Create GIF
 </button>
 
@@ -98,8 +90,7 @@
     {% if gif_ready %}
 
 <div class="result">
-
-    <h2>🎉 Your GIF is Ready!</h2>
+        <p>✨ Successfully created your animated GIF!</p>
 
     <img src="/output/animation.gif" class="gif-preview">
 
