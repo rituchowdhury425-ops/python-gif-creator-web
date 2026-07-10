@@ -139,8 +139,8 @@ button:hover {
 
 #preview img {
 
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 12px;
     border: 2px solid #95d5b2;
@@ -273,5 +273,58 @@ select{
 .dark-mode button{
 
     background:#40916c;
+
+}
+@media (max-width: 768px){
+
+    .container{
+
+        width:90%;
+        padding:25px;
+
+    }
+
+    h1{
+
+        font-size:28px;
+
+    }
+
+    .logo{
+    font-size:90px;
+}
+
+    }
+
+    .upload-box{
+
+        padding:25px;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+    select{
+
+        width:100%;
+
+    }
+
+    .gif-preview{
+
+        width:100%;
+
+    }
+
+    #preview img{
+
+        width:70px;
+        height:70px;
+
+    }
 
 }
