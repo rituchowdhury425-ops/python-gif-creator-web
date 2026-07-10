@@ -22,6 +22,12 @@
 
     <p>Upload your favorite images and create an animated GIF in seconds.</p>
 
+    <button id="themeButton" type="button">
+    🌙 Dark Mode
+</button>
+
+<br><br>
+
 
     <form method="POST" enctype="multipart/form-data">
 
@@ -179,6 +185,24 @@ function showLoading(){
     "⏳ Creating your GIF... Please wait 🌿";
 
 }
+
+const themeButton = document.getElementById("themeButton");
+
+themeButton.addEventListener("click", function(){
+
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+
+        themeButton.innerHTML = "☀️ Light Mode";
+
+    }else{
+
+        themeButton.innerHTML = "🌙 Dark Mode";
+
+    }
+
+});
 
 </script>
 

@@ -229,3 +229,49 @@ select{
     }
 
 }
+
+.dark-mode{
+
+    background:#081c15;
+
+}
+
+.dark-mode .container{
+
+    background:#1b4332;
+
+}
+
+.dark-mode h1{
+
+    color:white;
+
+}
+
+.dark-mode p{
+
+    color:#d8f3dc;
+
+}
+
+.dark-mode .upload-box{
+
+    background:#2d6a4f;
+
+    border-color:#74c69d;
+
+}
+
+.dark-mode select{
+
+    background:#2d6a4f;
+
+    color:white;
+
+}
+
+.dark-mode button{
+
+    background:#40916c;
+
+}
